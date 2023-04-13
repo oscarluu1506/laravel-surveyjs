@@ -13,7 +13,7 @@ class Survey extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name', 'slug', 'json','description','start_time','end_time',
+        'name', 'slug', 'json','description','start_time','end_time','start_date','end_date'
     ];
 
     protected $casts = [
