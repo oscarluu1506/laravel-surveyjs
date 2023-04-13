@@ -234,6 +234,10 @@
         name: 'survey-list',
         data () {
             return {
+                menu1: false,
+                menu2: false,
+                menu3: false,
+                menu4: false,
                 surveys: [],
                 page: 1,
                 pageLength: 1,
@@ -283,10 +287,6 @@
                     description: '',
                     start_date: new Date().toISOString().substr(0, 10),
                     end_date: '',
-                    menu1: false,
-                    menu2: false,
-                    menu3: false,
-                    menu4: false,
                     start_time: null,
                     end_time: null,
                 },
