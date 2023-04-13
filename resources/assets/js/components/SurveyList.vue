@@ -58,9 +58,11 @@
                                     <v-spacer></v-spacer>
                                     <v-flex xs12 sm6 md6>
                                       <v-menu
+                                          ref="menu"
                                           v-model="menu2"
-                                          :close-on-content-click="true"
+                                          :close-on-content-click="false"
                                           :nudge-right="40"
+                                          :return-value.sync="editedItem.start_time"
                                           lazy
                                           transition="scale-transition"
                                           offset-y
@@ -70,12 +72,17 @@
                                           <v-text-field
                                               v-model="editedItem.start_time"
                                               label="Start time"
-                                              prepend-icon="event"
+                                              prepend-icon="access_time"
                                               readonly
                                               v-on="on"
                                           ></v-text-field>
                                         </template>
-                                        <v-time-picker v-model="editedItem.start_time" @input="menu2 = false"></v-time-picker>
+                                        <v-time-picker
+                                            v-if="menu2"
+                                            v-model="editedItem.start_time"
+                                            full-width
+                                            @click:minute="$refs.menu.save(editedItem.start_time)"
+                                        ></v-time-picker>
                                       </v-menu>
                                     </v-flex>
 
@@ -94,7 +101,7 @@
                                         <template v-slot:activator="{ on }">
                                           <v-text-field
                                               v-model="editedItem.end_date"
-                                              label="Start date"
+                                              label="End date"
                                               prepend-icon="event"
                                               readonly
                                               v-on="on"
@@ -106,9 +113,11 @@
                                     <v-spacer></v-spacer>
                                     <v-flex xs12 sm6 md6>
                                       <v-menu
+                                          ref="menu"
                                           v-model="menu4"
-                                          :close-on-content-click="true"
+                                          :close-on-content-click="false"
                                           :nudge-right="40"
+                                          :return-value.sync="editedItem.end_time"
                                           lazy
                                           transition="scale-transition"
                                           offset-y
@@ -117,13 +126,18 @@
                                         <template v-slot:activator="{ on }">
                                           <v-text-field
                                               v-model="editedItem.end_time"
-                                              label="Start time"
-                                              prepend-icon="event"
+                                              label="End time"
+                                              prepend-icon="access_time"
                                               readonly
                                               v-on="on"
                                           ></v-text-field>
                                         </template>
-                                        <v-time-picker v-model="editedItem.end_time" @input="menu4 = false"></v-time-picker>
+                                        <v-time-picker
+                                            v-if="menu4"
+                                            v-model="editedItem.end_time"
+                                            full-width
+                                            @click:minute="$refs.menu.save(editedItem.end_time)"
+                                        ></v-time-picker>
                                       </v-menu>
                                     </v-flex>
 
