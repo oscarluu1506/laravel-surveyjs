@@ -82,8 +82,8 @@
                 <td class="text-sm-left">{{ props.item.name }}</td>
                 <td class="text-sm-left">{{ props.item.description }}</td>
                 <td class="text-sm-left">{{ props.item.created_at}}</td>
-                <td class="text-sm-left">{{ props.item.start_time}}</td>
-                <td class="text-sm-left">{{ props.item.end_time}}</td>
+                <td class="text-sm-left">{{ props.item.start_date}} {{props.item.start_time}}</td>
+                <td class="text-sm-left">{{ props.item.end_date}}  {{ props.item.end_time}}</td>
                 <td class="justify-center layout px-0">
                     <v-btn icon class="mx-0" @click="runSurvey(props.item.slug)">
                         <v-icon color="teal">play_circle_outline</v-icon>
@@ -159,7 +159,12 @@
                     }
                 ],
                 editedItem: {
-                    name: ''
+                    name: '',
+                    description: '',
+                    start_date: '',
+                    start_time: '',
+                    end_date: '',
+                    end_time: '',
                 },
 
             }
