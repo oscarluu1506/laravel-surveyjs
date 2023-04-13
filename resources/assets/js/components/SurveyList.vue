@@ -185,7 +185,7 @@
                     <v-card-actions>
                         <v-spacer></v-spacer>
                         <v-btn color="blue darken-1" flat @click.native="onCloseModal">Cancel</v-btn>
-                        <v-btn color="blue darken-1" flat @click.native="onSaveModal(editedItem.name)">Save</v-btn>
+                        <v-btn color="blue darken-1" flat @click.native="onSaveModal(editedItem.name,editedItem.description,editedItem.start_date,editedItem.start_time,editedItem.end_date,editedItem.end_time)">Save</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-dialog>
@@ -342,10 +342,15 @@
                 this.dialog = false;
                 this.editedItem = Object.assign({}, {name: ''})
             },
-            onSaveModal(name) {
+            onSaveModal(name,description,start_date,start_time,end_date,end_time) {
                 this.loading = true;
                 let data = {
                     name: name,
+                    description: description,
+                    start_date: start_date,
+                    start_time: start_time,
+                    end_date: end_date,
+                    end_time: end_time,
                     json: {
                         pages: []
                     }
@@ -357,7 +362,7 @@
                             this.loading = false;
                             this.$root.snackbarMsg = response.data.message;
                             this.$root.snackbar = true;
-                            this.editedItem = Object.assign({}, {name: ''});
+                            this.editedItem = Object.assign({}, {name: '', description: '',start_date: '',start_time: '',end_date: '',end_time: ''});
                             this.getSurveys();
                         }
                     })
