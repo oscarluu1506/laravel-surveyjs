@@ -58,7 +58,7 @@
                                     <v-spacer></v-spacer>
                                     <v-flex xs12 sm6 md6>
                                       <v-menu
-                                          ref="menu"
+                                          ref="menu2"
                                           v-model="menu2"
                                           :close-on-content-click="false"
                                           :nudge-right="40"
@@ -81,7 +81,7 @@
                                             v-if="menu2"
                                             v-model="editedItem.start_time"
                                             full-width
-                                            @click:minute="$refs.menu.save(editedItem.start_time)"
+                                            @click:minute="$refs.menu2.save(editedItem.start_time)"
                                         ></v-time-picker>
                                       </v-menu>
                                     </v-flex>
@@ -113,7 +113,7 @@
                                     <v-spacer></v-spacer>
                                     <v-flex xs12 sm6 md6>
                                       <v-menu
-                                          ref="menu"
+                                          ref="menu4"
                                           v-model="menu4"
                                           :close-on-content-click="false"
                                           :nudge-right="40"
@@ -136,7 +136,7 @@
                                             v-if="menu4"
                                             v-model="editedItem.end_time"
                                             full-width
-                                            @click:minute="$refs.menu.save(editedItem.end_time)"
+                                            @click:minute="$refs.menu4.save(editedItem.end_time)"
                                         ></v-time-picker>
                                       </v-menu>
                                     </v-flex>
