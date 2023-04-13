@@ -41,7 +41,7 @@
                                           lazy
                                           transition="scale-transition"
                                           offset-y
-                                          full-width
+                                          width="290px"
                                       >
                                         <template v-slot:activator="{ on }">
                                           <v-text-field
@@ -52,7 +52,7 @@
                                               v-on="on"
                                           ></v-text-field>
                                         </template>
-                                        <v-date-picker v-model="editedItem.start_date" @input="menu1 = false"></v-date-picker>
+                                        <v-date-picker v-model="editedItem.start_date" @input="menu1 = false" :min="new Date().toISOString().slice(0,10)"></v-date-picker>
                                       </v-menu>
                                     </v-flex>
                                     <v-spacer></v-spacer>
@@ -66,7 +66,7 @@
                                           lazy
                                           transition="scale-transition"
                                           offset-y
-                                          full-width
+                                          width="290px"
                                       >
                                         <template v-slot:activator="{ on }">
                                           <v-text-field
@@ -96,7 +96,7 @@
                                           lazy
                                           transition="scale-transition"
                                           offset-y
-                                          full-width
+                                          width="290px"
                                       >
                                         <template v-slot:activator="{ on }">
                                           <v-text-field
@@ -107,7 +107,7 @@
                                               v-on="on"
                                           ></v-text-field>
                                         </template>
-                                        <v-date-picker v-model="editedItem.end_date" @input="menu3 = false"></v-date-picker>
+                                        <v-date-picker v-model="editedItem.end_date" @input="menu3 = false" :min="new Date().toISOString().slice(0,10)"></v-date-picker>
                                       </v-menu>
                                     </v-flex>
                                     <v-spacer></v-spacer>
@@ -121,7 +121,7 @@
                                           lazy
                                           transition="scale-transition"
                                           offset-y
-                                          full-width
+                                          width="290px"
                                       >
                                         <template v-slot:activator="{ on }">
                                           <v-text-field
