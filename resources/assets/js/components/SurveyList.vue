@@ -228,7 +228,7 @@
                     {
                         text: 'Created date',
                         value: 'created_at',
-                        sortable: true
+                        sortable: false
                     },
                     {
                       text: 'Start date time',
