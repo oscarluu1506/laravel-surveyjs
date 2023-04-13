@@ -19,8 +19,10 @@ class CreateSurveysTable extends Migration
             $table->string('slug');
             $table->text('description')->nullable();
             $table->json('json');
-            $table->timestamp('start_time', $precision = 0);
-            $table->timestamp('end_time', $precision = 0);
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

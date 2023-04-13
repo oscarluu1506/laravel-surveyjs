@@ -31,6 +31,33 @@
 
                                   </v-textarea>
 
+                                  <v-date-picker
+                                      v-model="editedItem.start_date"
+                                      label="Start date"
+                                  >
+
+                                  </v-date-picker>
+
+                                  <v-time-picker
+                                      v-model="editedItem.start_time"
+                                      label="Start time"
+                                  >
+
+                                  </v-time-picker>
+
+                                  <v-date-picker
+                                      v-model="editedItem.end_date"
+                                      label="End date"
+                                  >
+
+                                  </v-date-picker>
+
+                                  <v-time-picker
+                                      v-model="editedItem.end_time"
+                                      label="End time"
+                                  >
+
+                                  </v-time-picker>
                                 </v-flex>
                             </v-layout>
                         </v-container>
@@ -53,7 +80,10 @@
             <template slot="items" slot-scope="props">
                 <td class="text-sm-left">{{ props.item.id }}</td>
                 <td class="text-sm-left">{{ props.item.name }}</td>
+                <td class="text-sm-left">{{ props.item.description }}</td>
                 <td class="text-sm-left">{{ props.item.created_at}}</td>
+                <td class="text-sm-left">{{ props.item.start_time}}</td>
+                <td class="text-sm-left">{{ props.item.end_time}}</td>
                 <td class="justify-center layout px-0">
                     <v-btn icon class="mx-0" @click="runSurvey(props.item.slug)">
                         <v-icon color="teal">play_circle_outline</v-icon>
@@ -113,13 +143,13 @@
                         sortable: false
                     },
                     {
-                      text: 'Start time',
-                      value: 'start_time',
+                      text: 'Start date time',
+                      value: 'start_date ' + ' start_time',
                       sortable: false
                     },
                     {
-                      text: 'End time',
-                      value: 'end_time',
+                      text: 'End date time',
+                      value: 'end_date ' + ' end_time',
                       sortable: false
                     },
                     {
