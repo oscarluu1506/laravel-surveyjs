@@ -17,7 +17,10 @@ class CreateSurveysTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
+            $table->text('description')->nullable();
             $table->json('json');
+            $table->timestamp('start_time', $precision = 0);
+            $table->timestamp('end_time', $precision = 0);
             $table->timestamps();
             $table->softDeletes();
         });

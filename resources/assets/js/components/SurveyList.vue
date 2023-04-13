@@ -23,6 +23,14 @@
                                     >
 
                                     </v-text-field>
+
+                                  <v-textarea
+                                      v-model="editedItem.description"
+                                      label="Survey description"
+                                  >
+
+                                  </v-textarea>
+
                                 </v-flex>
                             </v-layout>
                         </v-container>
@@ -95,9 +103,24 @@
                         sortable: false
                     },
                     {
+                      text: 'Description',
+                      value: 'description',
+                      sortable: false
+                    },
+                    {
                         text: 'Created date',
-                        valie: 'created_at',
+                        value: 'created_at',
                         sortable: false
+                    },
+                    {
+                      text: 'Start time',
+                      value: 'start_time',
+                      sortable: false
+                    },
+                    {
+                      text: 'End time',
+                      value: 'end_time',
+                      sortable: false
                     },
                     {
                         text: 'Actions',
