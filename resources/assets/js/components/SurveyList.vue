@@ -3,7 +3,7 @@
         <v-toolbar>
             <v-toolbar-title>List of all available surveys</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-dialog flat v-model="dialog" max-width="500px" content-class="remove-overflow">
+            <v-dialog flat v-model="dialog" max-width="80%" content-class="remove-overflow">
                 <v-btn slot="activator" color="primary" dark class="mb-2">New Survey</v-btn>
                 <v-card>
                     <v-card-title>
@@ -234,14 +234,6 @@
         name: 'survey-list',
         data () {
             return {
-              date1: new Date().toISOString().substr(0, 10),
-              menu1: false,
-              time1: '',
-              menu2: false,
-              date2: '',
-              menu3: false,
-              time2: '',
-              menu4: false,
                 surveys: [],
                 page: 1,
                 pageLength: 1,
@@ -289,10 +281,14 @@
                 editedItem: {
                     name: '',
                     description: '',
-                    start_date: '',
-                    start_time: '',
+                    start_date: new Date().toISOString().substr(0, 10),
                     end_date: '',
-                    end_time: '',
+                    menu1: false,
+                    menu2: false,
+                    menu3: false,
+                    menu4: false,
+                    start_time: null,
+                    end_time: null,
                 },
 
             }
