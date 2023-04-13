@@ -142,42 +142,6 @@
                                     </v-flex>
 
                                   </v-layout>
-
-
-<!--                                    <v-layout row wrap>-->
-<!--                                        <v-flex xs12 sm6 md6>-->
-<!--                                            <v-date-picker-->
-<!--                                                v-model="editedItem.start_date"-->
-<!--                                                label="Start date"-->
-<!--                                            >-->
-
-<!--                                            </v-date-picker>-->
-
-<!--                                            <v-time-picker-->
-<!--                                                v-model="editedItem.start_time"-->
-<!--                                                label="Start time"-->
-<!--                                            >-->
-
-<!--                                            </v-time-picker>-->
-<!--                                        </v-flex>-->
-<!--                                    </v-layout>-->
-<!--                                    <v-layout row wrap>-->
-<!--                                        <v-flex xs12 sm6 md6>-->
-<!--                                            <v-date-picker-->
-<!--                                                v-model="editedItem.end_date"-->
-<!--                                                label="End date"-->
-<!--                                            >-->
-
-<!--                                            </v-date-picker>-->
-
-<!--                                            <v-time-picker-->
-<!--                                                v-model="editedItem.end_time"-->
-<!--                                                label="End time"-->
-<!--                                            >-->
-
-<!--                                            </v-time-picker>-->
-<!--                                        </v-flex>-->
-<!--                                    </v-layout>-->
                                 </v-flex>
                             </v-layout>
                         </v-container>
@@ -264,7 +228,7 @@
                     {
                         text: 'Created date',
                         value: 'created_at',
-                        sortable: false
+                        sortable: true
                     },
                     {
                       text: 'Start date time',
