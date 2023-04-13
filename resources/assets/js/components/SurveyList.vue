@@ -249,7 +249,7 @@
                 editedItem: {
                     name: '',
                     description: '',
-                    start_date: new Date().toISOString().substr(0, 10),
+                    start_date: '',
                     end_date: '',
                     start_time: null,
                     end_time: null,

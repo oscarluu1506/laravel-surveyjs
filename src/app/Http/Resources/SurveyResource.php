@@ -19,6 +19,7 @@ class SurveyResource extends JsonResource
             'name'          =>  $this->name,
             'slug'          =>  $this->slug,
             'json'          =>  $this->json,
+            'description'          =>  $this->description,
 //            'start_date'    =>  $this->start_date->formatLocalized('%A %d %B %Y'),
             'start_date'    =>  date_format(date_create($this->create_date),"D d F Y"),
             'start_time'    =>  $this->start_time,
